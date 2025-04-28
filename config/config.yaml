@@ -1,0 +1,20 @@
+# config/config.yaml
+
+paths:
+  yolo_model: ${YOLO_MODEL_PATH}
+  classifier_model: ${CLASSIFIER_MODEL_PATH}
+  segmenter_model: ${SEGMENTER_MODEL_PATH}
+  output_folder: ${OUTPUT_FOLDER}
+  report_folder: ${REPORT_FOLDER}
+
+thresholds:
+  detection_confidence: ${DETECTION_CONFIDENCE}
+  damage_severity_low: ${DAMAGE_SEVERITY_LOW}
+  damage_severity_medium: ${DAMAGE_SEVERITY_MEDIUM}
+
+email:
+  sender_email: ${SENDER_EMAIL}
+  sender_password: ${SENDER_PASSWORD}
+  receiver_email: ${RECEIVER_EMAIL}
+  smtp_server: ${SMTP_SERVER}
+  smtp_port: ${SMTP_PORT}

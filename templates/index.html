@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Traffic Sign Damage Detection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-light: #4cc9f0;
+            --primary-dark: #3a0ca3;
+            --success: #06d6a0;
+            --error: #ef476f;
+            --dark: #2b2d42;
+            --gray: #8d99ae;
+            --light: #f8f9fa;
+            --accent: #f72585;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body { 
+            font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif; 
+            background: linear-gradient(135deg, #141e30, #243b55);
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: var(--dark);
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Abstract background shapes */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary-light), var(--primary));
+            top: -100px;
+            right: -100px;
+            opacity: 0.5;
+            filter: blur(60px);
+            z-index: -1;
+        }
+        
+        body::after {
+            content: "";
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--accent), var(--primary-dark));
+            bottom: -80px;
+            left: -80px;
+            opacity: 0.4;
+            filter: blur(60px);
+            z-index: -1;
+        }
+        
+        .container { 
+            width: 100%;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            transform: translateY(0);
+        }
+        
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Top decorative element */
+        .top-decoration {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary-light));
+            border-radius: 3px 3px 0 0;
+        }
+        
+        .header {
+            position: relative;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .logo-bg {
+            width: 110px;
+            height: 110px;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 25px -5px rgba(67, 97, 238, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo-bg::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.2) 50%, transparent 60%);
+            z-index: 1;
+            animation: shine 3s infinite linear;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+        
+        .icon {
+            font-size: 42px;
+            color: white;
+            z-index: 2;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 { 
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        
+        .desc { 
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 40px;
+            line-height: 1.6;
+            font-size: 15px;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .upload-area {
+            border: 2px dashed #d1d8e0;
+            border-radius: 16px;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(248,249,250,0.8));
+        }
+        
+        .upload-area:hover {
+            border-color: var(--primary);
+            background: rgba(67, 97, 238, 0.05);
+            transform: scale(1.01);
+        }
+        
+        .upload-icon-wrapper {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.1), rgba(76, 201, 240, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .upload-area:hover .upload-icon-wrapper {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(67, 97, 238, 0.1);
+        }
+        
+        .upload-icon {
+            font-size: 28px;
+            color: var(--primary);
+        }
+        
+        .upload-text {
+            color: var(--dark);
+            margin-bottom: 6px;
+            font-weight: 500;
+            font-size: 16px;
+        }
+        
+        .file-types {
+            font-size: 13px;
+            color: var(--gray);
+            display: block;
+        }
+        
+        #image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+        
+        .file-selected {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            margin: 15px 0;
+            animation: fadeIn 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .file-name {
+            background: linear-gradient(to right, rgba(67, 97, 238, 0.1), rgba(76, 201, 240, 0.1));
+            padding: 8px 16px;
+            border-radius: 50px;
+            margin-right: 10px;
+            font-size: 14px;
+            color: var(--primary);
+            font-weight: 500;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 200px;
+            box-shadow: 0 2px 5px rgba(67, 97, 238, 0.1);
+        }
+        
+        .remove-file {
+            color: var(--error);
+            cursor: pointer;
+            font-size: 18px;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(239, 71, 111, 0.1);
+            transition: all 0.2s;
+        }
+        
+        .remove-file:hover {
+            background: rgba(239, 71, 111, 0.2);
+            transform: scale(1.1);
+        }
+        
+        .image-preview-container {
+            margin-bottom: 25px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+            display: none;
+            animation: scaleIn 0.3s;
+        }
+        
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .preview-image {
+            width: 100%;
+            max-height: 230px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .preview-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .preview-overlay i {
+            margin-right: 8px;
+        }
+        
+        .btn-container {
+            position: relative;
+            margin-top: 15px;
+        }
+        
+        button { 
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            color: #fff;
+            border: none;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+        
+        button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        button:hover::before {
+            opacity: 1;
+        }
+        
+        button:hover { 
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(67, 97, 238, 0.4);
+        }
+        
+        button:active {
+            transform: translateY(0);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
+        }
+        
+        button i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        
+        .btn-text {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+        }
+        
+        .message {
+            text-align: center;
+            margin-bottom: 25px;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: slideIn 0.3s;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .message i {
+            margin-right: 12px;
+            font-size: 18px;
+        }
+        
+        .error {
+            background-color: rgba(239, 71, 111, 0.1);
+            color: var(--error);
+            border-left: 4px solid var(--error);
+        }
+        
+        .success {
+            background-color: rgba(6, 214, 160, 0.1);
+            color: var(--success);
+            border-left: 4px solid var(--success);
+        }
+        
+        .footer { 
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 40px;
+            font-size: 13px;
+        }
+        
+        .footer a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Loading animation for button */
+        .loading-effect {
+            display: inline-block;
+            position: relative;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            display: none;
+        }
+        
+        .loading-effect div {
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            margin: 2px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            animation: loading-effect 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            border-color: #fff transparent transparent transparent;
+        }
+        
+        .loading-effect div:nth-child(1) {
+            animation-delay: -0.45s;
+        }
+        
+        .loading-effect div:nth-child(2) {
+            animation-delay: -0.3s;
+        }
+        
+        .loading-effect div:nth-child(3) {
+            animation-delay: -0.15s;
+        }
+        
+        @keyframes loading-effect {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Traffic sign background elements */
+        .bg-element {
+            position: absolute;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        
+        .sign-stop {
+            top: 10%;
+            right: 10%;
+            font-size: 50px;
+            color: #ff0000;
+        }
+        
+        .sign-yield {
+            bottom: 15%;
+            left: 15%;
+            font-size: 40px;
+            color: #ff6600;
+        }
+        
+        .sign-speed {
+            top: 20%;
+            left: 10%;
+            font-size: 45px;
+            color: #0088ff;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 700px) {
+            .container {
+                padding: 30px;
+            }
+            
+            .logo-bg {
+                width: 90px;
+                height: 90px;
+            }
+            
+            .icon {
+                font-size: 36px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .upload-area {
+                padding: 30px 15px;
+            }
+        }
+        
+        @media (max-width: 500px) {
+            .container {
+                padding: 25px 20px;
+            }
+            
+            .logo-bg {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .icon {
+                font-size: 32px;
+            }
+            
+            .upload-icon-wrapper {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .upload-icon {
+                font-size: 24px;
+            }
+            
+            button {
+                padding: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-element sign-stop"><i class="fas fa-stop-sign"></i></div>
+    <div class="bg-element sign-yield"><i class="fas fa-exclamation-triangle"></i></div>
+    <div class="bg-element sign-speed"><i class="fas fa-tachometer-alt"></i></div>
+    
+    <div class="container">
+        <div class="top-decoration"></div>
+        
+        <div class="header">
+            <div class="logo-bg">
+                <i class="fas fa-traffic-light icon"></i>
+            </div>
+            <h1>Traffic Sign Damage Detection</h1>
+            <div class="desc">
+                Upload a photo of a road sign to detect and analyze possible damage using our advanced AI computer vision system.
+            </div>
+        </div>
+        
+        {% if message %}
+            <div class="message {{ 'success' if success else 'error' }}">
+                <i class="{{ 'fas fa-check-circle' if success else 'fas fa-exclamation-circle' }}"></i>
+                {{ message }}
+            </div>
+        {% endif %}
+        
+        <form action="/upload" method="post" enctype="multipart/form-data" id="uploadForm">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon-wrapper">
+                    <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                </div>
+                <div class="upload-text">Drag and drop your image here or click to browse</div>
+                <div class="file-types">Supported formats: JPG, PNG (max 10MB)</div>
+                <input type="file" id="image" name="image" accept="image/jpeg,image/png" required>
+            </div>
+            
+            <div class="file-selected" id="fileSelected">
+                <div class="file-name" id="fileName"></div>
+                <div class="remove-file" id="removeFile"><i class="fas fa-times"></i></div>
+            </div>
+            
+            <div class="image-preview-container" id="imagePreviewContainer">
+                <img class="preview-image" id="previewImage" src="" alt="Preview">
+                <div class="preview-overlay">
+                    <i class="fas fa-image"></i> <span id="imageDetails">Ready for analysis</span>
+                </div>
+            </div>
+            
+            <div class="btn-container">
+                <button type="submit" id="submitBtn">
+                    <div class="loading-effect" id="loadingEffect">
+                        <div></div><div></div><div></div><div></div>
+                    </div>
+                    <span class="btn-text"><i class="fas fa-search"></i> Analyze Sign</span>
+                </button>
+            </div>
+        </form>
+    </div>
+    
+    <div class="footer">
+        &copy; {{ year or 2024 }} Traffic Sign AI | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </div>
+    
+    <script>
+        const uploadInput = document.getElementById('image');
+        const uploadArea = document.getElementById('uploadArea');
+        const fileSelected = document.getElementById('fileSelected');
+        const fileName = document.getElementById('fileName');
+        const removeFile = document.getElementById('removeFile');
+        const imagePreviewContainer = document.getElementById('imagePreviewContainer');
+        const previewImage = document.getElementById('previewImage');
+        const imageDetails = document.getElementById('imageDetails');
+        const submitBtn = document.getElementById('submitBtn');
+        const loadingEffect = document.getElementById('loadingEffect');
+        const btnText = document.querySelector('.btn-text');
+        
+        uploadInput.addEventListener('change', function() {
+            if (this.files && this.files[0]) {
+                const file = this.files[0];
+                
+                // Check file size (max 10MB)
+                if (file.size > 10 * 1024 * 1024) {
+                    alert('File size exceeds 10MB limit. Please choose a smaller file.');
+                    this.value = '';
+                    return;
+                }
+                
+                // Display file name
+                fileName.textContent = file.name;
+                fileSelected.style.display = 'flex';
+                
+                // Create image preview
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewImage.src = e.target.result;
+                    imagePreviewContainer.style.display = 'block';
+                    
+                    // Get image dimensions
+                    const img = new Image();
+                    img.onload = function() {
+                        imageDetails.textContent = `${file.name} (${this.width}×${this.height})`;
+                    };
+                    img.src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+        
+        removeFile.addEventListener('click', function() {
+            uploadInput.value = '';
+            fileSelected.style.display = 'none';
+            imagePreviewContainer.style.display = 'none';
+        });
+        
+        // Form submission animation
+        uploadForm.addEventListener('submit', function(e) {
+            // Uncomment to prevent actual form submission for demo purposes
+            // e.preventDefault();
+            
+            loadingEffect.style.display = 'inline-block';
+            submitBtn.disabled = true;
+            
+            // For demo purposes, simulate processing
+            // In production, this would be removed as the form would submit
+            /*
+            setTimeout(function() {
+                loadingEffect.style.display = 'none';
+                submitBtn.disabled = false;
+                
+                // Show success message for demo
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'message success';
+                messageDiv.innerHTML = '<i class="fas fa-check-circle"></i> Image analyzed successfully! Detected minor damage on the left edge.';
+                uploadForm.insertBefore(messageDiv, uploadForm.firstChild);
+            }, 2000);
+            */
+        });
+        
+        // Drag and drop functionality
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, preventDefaults, false);
+        });
+        
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        
+        ['dragenter', 'dragover'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, highlight, false);
+        });
+        
+        ['dragleave', 'drop'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, unhighlight, false);
+        });
+        
+        function highlight() {
+            uploadArea.style.borderColor = '#4361ee';
+            uploadArea.style.backgroundColor = 'rgba(67, 97, 238, 0.05)';
+            uploadArea.style.transform = 'scale(1.01)';
+        }
+        
+        function unhighlight() {
+            uploadArea.style.borderColor = '#d1d8e0';
+            uploadArea.style.backgroundColor = '';
+            uploadArea.style.transform = '';
+        }
+        
+        uploadArea.addEventListener('drop', handleDrop, false);
+        
+        function handleDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            uploadInput.files = files;
+            
+            if (files && files[0]) {
+                const event = new Event('change');
+                uploadInput.dispatchEvent(event);
+            }
+        }
+    </script>
+</body>
+</html>

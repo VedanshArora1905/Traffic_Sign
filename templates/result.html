@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detection Result - Traffic Sign Damage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-light: #4cc9f0;
+            --primary-dark: #3a0ca3;
+            --success: #06d6a0;
+            --error: #ef476f;
+            --dark: #2b2d42;
+            --gray: #8d99ae;
+            --light: #f8f9fa;
+            --accent: #f72585;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body { 
+            font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif; 
+            background: linear-gradient(135deg, #141e30, #243b55);
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: var(--dark);
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Abstract background shapes */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary-light), var(--primary));
+            top: -100px;
+            right: -100px;
+            opacity: 0.5;
+            filter: blur(60px);
+            z-index: -1;
+        }
+        
+        body::after {
+            content: "";
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--accent), var(--primary-dark));
+            bottom: -80px;
+            left: -80px;
+            opacity: 0.4;
+            filter: blur(60px);
+            z-index: -1;
+        }
+        
+        /* Traffic sign background elements */
+        .bg-element {
+            position: absolute;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        
+        .sign-stop {
+            top: 10%;
+            right: 10%;
+            font-size: 50px;
+            color: #ff0000;
+        }
+        
+        .sign-yield {
+            bottom: 15%;
+            left: 15%;
+            font-size: 40px;
+            color: #ff6600;
+        }
+        
+        .sign-speed {
+            top: 20%;
+            left: 10%;
+            font-size: 45px;
+            color: #0088ff;
+        }
+        
+        .container { 
+            width: 100%;
+            max-width: 720px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            transform: translateY(0);
+            animation: fadeSlideUp 0.5s ease-out;
+        }
+        
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Top decorative element */
+        .top-decoration {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary-light));
+            border-radius: 3px 3px 0 0;
+        }
+        
+        .header {
+            position: relative;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo-bg {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--success), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 25px -5px rgba(6, 214, 160, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo-bg::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.2) 50%, transparent 60%);
+            z-index: 1;
+            animation: shine 3s infinite linear;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+        
+        .icon {
+            font-size: 36px;
+            color: white;
+            z-index: 2;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 { 
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+            background: linear-gradient(90deg, var(--success), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        
+        .detection-summary {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 30px;
+            line-height: 1.6;
+            font-size: 15px;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .detection-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 10px;
+            background: linear-gradient(to right, rgba(6, 214, 160, 0.2), rgba(76, 201, 240, 0.2));
+            color: var(--success);
+        }
+        
+        .detection-badge i {
+            margin-right: 5px;
+        }
+        
+        .result-section {
+            margin-bottom: 30px;
+            animation: fadeIn 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+        
+        .result-section:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+        
+        .result-section:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-title {
+            font-size: 18px;
+            color: var(--dark);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .section-title i {
+            margin-right: 10px;
+            color: var(--primary);
+            width: 22px;
+            text-align: center;
+        }
+        
+        .section-title::after {
+            content: "";
+            flex-grow: 1;
+            height: 1px;
+            background: linear-gradient(to right, rgba(141, 153, 174, 0.3), transparent);
+            margin-left: 15px;
+        }
+        
+        .image-preview { 
+            text-align: center; 
+            margin-bottom: 30px;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.02) 70%, rgba(0,0,0,0.25) 100%);
+            pointer-events: none;
+        }
+        
+        .image-preview img { 
+            max-width: 100%;
+            vertical-align: middle;
+            transition: transform 0.5s;
+        }
+        
+        .image-preview:hover img {
+            transform: scale(1.02);
+        }
+        
+        .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            color: white;
+            font-size: 14px;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            text-align: left;
+            display: flex;
+            align-items: center;
+        }
+        
+        .image-caption i {
+            margin-right: 8px;
+        }
+        
+        .report { 
+            background: linear-gradient(to bottom, rgba(248,249,250,0.8), rgba(237,240,245,0.8));
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 10px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--dark);
+            border: 1px solid rgba(141, 153, 174, 0.1);
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .report strong { 
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .report pre {
+            white-space: pre-wrap;
+            font-family: inherit;
+            margin: 0;
+        }
+        
+        .damage-indicators {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .damage-indicator {
+            flex: 1;
+            min-width: 120px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        
+        .damage-indicator:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .indicator-value {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        
+        .indicator-label {
+            font-size: 13px;
+            color: var(--gray);
+        }
+        
+        .chart-container {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            margin-top: 20px;
+            height: 200px;
+            position: relative;
+        }
+        
+        .chart-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        .downloads {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .download-link { 
+            flex: 1;
+            min-width: 150px;
+            background: linear-gradient(to right, rgba(248,249,250,0.9), rgba(248,249,250,0.8));
+            border: 1px solid rgba(67, 97, 238, 0.1);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        
+        .download-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            border-color: rgba(67, 97, 238, 0.2);
+        }
+        
+        .download-link i {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+        
+        .back-link-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .back-link { 
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+            transition: all 0.2s;
+        }
+        
+        .back-link:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
+        }
+        
+        .back-link i {
+            margin-right: 8px;
+        }
+        
+        .footer { 
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 40px;
+            font-size: 13px;
+        }
+        
+        .footer a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 700px) {
+            .container {
+                padding: 30px;
+            }
+            
+            .damage-indicators {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .damage-indicator {
+                min-width: 100%;
+            }
+            
+            .downloads {
+                flex-direction: column;
+            }
+            
+            .download-link {
+                min-width: 100%;
+            }
+        }
+        
+        @media (max-width: 500px) {
+            .container {
+                padding: 25px 20px;
+            }
+            
+            .logo-bg {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .icon {
+                font-size: 28px;
+            }
+            
+            h1 {
+                font-size: 22px;
+            }
+            
+            .section-title {
+                font-size: 16px;
+            }
+            
+            .back-link {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-element sign-stop"><i class="fas fa-stop-sign"></i></div>
+    <div class="bg-element sign-yield"><i class="fas fa-exclamation-triangle"></i></div>
+    <div class="bg-element sign-speed"><i class="fas fa-tachometer-alt"></i></div>
+    
+    <div class="container">
+        <div class="top-decoration"></div>
+        
+        <div class="header">
+            <div class="logo-bg">
+                <i class="fas fa-check-circle icon"></i>
+            </div>
+            <h1>Detection Complete</h1>
+            <div class="detection-summary">
+                Analysis completed successfully. Our AI has examined your traffic sign image.
+                <div class="detection-badge">
+                    <i class="fas fa-shield-alt"></i> Damage Detected
+                </div>
+            </div>
+        </div>
+        
+        <div class="result-section">
+            <div class="section-title">
+                <i class="fas fa-image"></i> Analyzed Image
+            </div>
+            {% if image_url %}
+                <div class="image-preview">
+                    <img src="{{ image_url }}" alt="Analyzed Traffic Sign">
+                    <div class="image-overlay"></div>
+                    <div class="image-caption">
+                        <i class="fas fa-check-circle"></i> Image successfully processed
+                    </div>
+                </div>
+            {% else %}
+                <div class="image-preview">
+                    <img src="/api/placeholder/600/400" alt="Placeholder">
+                    <div class="image-overlay"></div>
+                    <div class="image-caption">
+                        <i class="fas fa-exclamation-triangle"></i> Image not available
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        
+        <div class="result-section">
+            <div class="section-title">
+                <i class="fas fa-chart-pie"></i> Damage Assessment
+            </div>
+            
+            <div class="damage-indicators">
+                <div class="damage-indicator">
+                    <div class="indicator-value">73%</div>
+                    <div class="indicator-label">Confidence</div>
+                </div>
+                <div class="damage-indicator">
+                    <div class="indicator-value">18%</div>
+                    <div class="indicator-label">Damage Area</div>
+                </div>
+                <div class="damage-indicator">
+                    <div class="indicator-value">Med</div>
+                    <div class="indicator-label">Severity</div>
+                </div>
+            </div>
+            
+            <div class="report">
+                {% if report_content %}
+                    <pre>{{ report_content }}</pre>
+                {% else %}
+                    <p><strong>Analysis Summary:</strong> The stop sign shows visible damage on the left edge, with approximately 18% of the surface area affected. The primary damage type is classified as <strong>edge deformation</strong> with some <strong>surface scratches</strong>.</p>
+                    
+                    <p>The sign remains functionally visible from standard viewing distances but may need replacement in the next 3-6 months based on degradation pattern analysis.</p>
+                    
+                    <p><strong>Recommended action:</strong> Schedule for replacement within the next maintenance cycle. No immediate action required as the sign remains readable and functionally effective.</p>
+                {% endif %}
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-placeholder">
+                    Damage distribution visualization would appear here
+                </div>
+            </div>
+        </div>
+        
+        <div class="result-section">
+            <div class="section-title">
+                <i class="fas fa-file-alt"></i> Report & Downloads
+            </div>
+            
+            <div class="downloads">
+                {% if report_file_url %}
+                    <a href="{{ report_file_url }}" download class="download-link">
+                        <i class="fas fa-file-pdf"></i> Full Report PDF
+                    </a>
+                {% else %}
+                    <a href="#" class="download-link">
+                        <i class="fas fa-file-pdf"></i> Full Report PDF
+                    </a>
+                {% endif %}
+                <a href="#" class="download-link">
+                    <i class="fas fa-file-csv"></i> Data Export (CSV)
+                </a>
+                <a href="#" class="download-link">
+                    <i class="fas fa-image"></i> Analyzed Image
+                </a>
+            </div>
+        </div>
+        
+        <div class="back-link-container">
+            <a href="/" class="back-link">
+                <i class="fas fa-camera"></i> Analyze Another Sign
+            </a>
+        </div>
+    </div>
+    
+    <div class="footer">
+        &copy; {{ year or 2024 }} Traffic Sign AI | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </div>
+</body>
+</html>

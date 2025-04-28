@@ -1,0 +1,428 @@
+2025-04-28 16:47:32,856 - INFO - Configuration validated successfully
+2025-04-28 16:47:32,859 - INFO - Starting processing of 203 images
+2025-04-28 16:47:32,870 - INFO - Processing image: data\raw\00000_00000_00000.jpg
+2025-04-28 16:47:54,167 - INFO - No signs detected in data\raw\00000_00000_00000.jpg
+2025-04-28 16:47:54,183 - INFO - Processing image: data\raw\00000_00000_00001.jpg
+2025-04-28 16:47:55,074 - INFO - No signs detected in data\raw\00000_00000_00001.jpg
+2025-04-28 16:47:55,096 - INFO - Processing image: data\raw\00000_00000_00002.jpg
+2025-04-28 16:47:55,954 - INFO - No signs detected in data\raw\00000_00000_00002.jpg
+2025-04-28 16:47:55,981 - INFO - Processing image: data\raw\00000_00000_00003.jpg
+2025-04-28 16:47:56,786 - INFO - No signs detected in data\raw\00000_00000_00003.jpg
+2025-04-28 16:47:56,810 - INFO - Processing image: data\raw\00000_00000_00004.jpg
+2025-04-28 16:47:57,604 - INFO - No signs detected in data\raw\00000_00000_00004.jpg
+2025-04-28 16:47:57,636 - INFO - Processing image: data\raw\00000_00000_00005.jpg
+2025-04-28 16:47:58,439 - INFO - No signs detected in data\raw\00000_00000_00005.jpg
+2025-04-28 16:47:58,464 - INFO - Processing image: data\raw\00000_00000_00006.jpg
+2025-04-28 16:47:59,356 - INFO - No signs detected in data\raw\00000_00000_00006.jpg
+2025-04-28 16:47:59,383 - INFO - Processing image: data\raw\00000_00000_00007.jpg
+2025-04-28 16:48:00,166 - INFO - No signs detected in data\raw\00000_00000_00007.jpg
+2025-04-28 16:48:00,203 - INFO - Processing image: data\raw\00000_00000_00008.jpg
+2025-04-28 16:48:01,424 - INFO - No signs detected in data\raw\00000_00000_00008.jpg
+2025-04-28 16:48:01,448 - INFO - Processing image: data\raw\00000_00000_00009.jpg
+2025-04-28 16:48:02,239 - INFO - No signs detected in data\raw\00000_00000_00009.jpg
+2025-04-28 16:48:02,264 - INFO - Processing image: data\raw\00001_00000_00010.jpg
+2025-04-28 16:48:03,025 - INFO - No signs detected in data\raw\00001_00000_00010.jpg
+2025-04-28 16:48:03,058 - INFO - Processing image: data\raw\00001_00000_00011.jpg
+2025-04-28 16:48:03,947 - INFO - No signs detected in data\raw\00001_00000_00011.jpg
+2025-04-28 16:48:03,965 - INFO - Processing image: data\raw\00001_00000_00012.jpg
+2025-04-28 16:48:04,788 - INFO - No signs detected in data\raw\00001_00000_00012.jpg
+2025-04-28 16:48:04,810 - INFO - Processing image: data\raw\00001_00000_00013.jpg
+2025-04-28 16:48:05,632 - INFO - No signs detected in data\raw\00001_00000_00013.jpg
+2025-04-28 16:48:05,649 - INFO - Processing image: data\raw\00001_00000_00014.jpg
+2025-04-28 16:48:06,464 - INFO - No signs detected in data\raw\00001_00000_00014.jpg
+2025-04-28 16:48:06,483 - INFO - Processing image: data\raw\00001_00000_00015.jpg
+2025-04-28 16:48:07,300 - INFO - No signs detected in data\raw\00001_00000_00015.jpg
+2025-04-28 16:48:07,325 - INFO - Processing image: data\raw\00001_00000_00016.jpg
+2025-04-28 16:48:08,202 - INFO - No signs detected in data\raw\00001_00000_00016.jpg
+2025-04-28 16:48:08,226 - INFO - Processing image: data\raw\00001_00000_00017.jpg
+2025-04-28 16:48:09,078 - INFO - No signs detected in data\raw\00001_00000_00017.jpg
+2025-04-28 16:48:09,105 - INFO - Processing image: data\raw\00001_00000_00018.jpg
+2025-04-28 16:48:09,938 - INFO - No signs detected in data\raw\00001_00000_00018.jpg
+2025-04-28 16:48:09,938 - INFO - Processing image: data\raw\00001_00000_00019.jpg
+2025-04-28 16:48:10,736 - INFO - No signs detected in data\raw\00001_00000_00019.jpg
+2025-04-28 16:48:10,758 - INFO - Processing image: data\raw\00001_00000_00020.jpg
+2025-04-28 16:48:11,695 - INFO - No signs detected in data\raw\00001_00000_00020.jpg
+2025-04-28 16:48:11,732 - INFO - Processing image: data\raw\00001_00000_00021.jpg
+2025-04-28 16:48:12,798 - INFO - No signs detected in data\raw\00001_00000_00021.jpg
+2025-04-28 16:48:12,823 - INFO - Processing image: data\raw\00001_00000_00022.jpg
+2025-04-28 16:48:13,670 - INFO - No signs detected in data\raw\00001_00000_00022.jpg
+2025-04-28 16:48:13,693 - INFO - Processing image: data\raw\00002_00000_00000.jpg
+2025-04-28 16:48:14,456 - INFO - No signs detected in data\raw\00002_00000_00000.jpg
+2025-04-28 16:48:14,480 - INFO - Processing image: data\raw\00002_00000_00001.jpg
+2025-04-28 16:48:15,220 - INFO - No signs detected in data\raw\00002_00000_00001.jpg
+2025-04-28 16:48:15,239 - INFO - Processing image: data\raw\00002_00000_00002.jpg
+2025-04-28 16:48:16,346 - INFO - No signs detected in data\raw\00002_00000_00002.jpg
+2025-04-28 16:48:16,349 - INFO - Processing image: data\raw\00002_00000_00003.jpg
+2025-04-28 16:48:17,120 - INFO - No signs detected in data\raw\00002_00000_00003.jpg
+2025-04-28 16:48:17,133 - INFO - Processing image: data\raw\00002_00000_00004.jpg
+2025-04-28 16:48:17,832 - INFO - No signs detected in data\raw\00002_00000_00004.jpg
+2025-04-28 16:48:17,866 - INFO - Processing image: data\raw\00002_00000_00005.jpg
+2025-04-28 16:48:18,695 - INFO - No signs detected in data\raw\00002_00000_00005.jpg
+2025-04-28 16:48:18,704 - INFO - Processing image: data\raw\00002_00000_00006.jpg
+2025-04-28 16:48:19,393 - INFO - No signs detected in data\raw\00002_00000_00006.jpg
+2025-04-28 16:48:19,412 - INFO - Processing image: data\raw\00002_00000_00007.jpg
+2025-04-28 16:48:20,093 - INFO - No signs detected in data\raw\00002_00000_00007.jpg
+2025-04-28 16:48:20,107 - INFO - Processing image: data\raw\00002_00000_00008.jpg
+2025-04-28 16:48:20,922 - INFO - No signs detected in data\raw\00002_00000_00008.jpg
+2025-04-28 16:48:20,939 - INFO - Processing image: data\raw\00002_00000_00009.jpg
+2025-04-28 16:48:21,598 - INFO - No signs detected in data\raw\00002_00000_00009.jpg
+2025-04-28 16:48:21,624 - INFO - Processing image: data\raw\00002_00000_00010.jpg
+2025-04-28 16:48:22,329 - INFO - No signs detected in data\raw\00002_00000_00010.jpg
+2025-04-28 16:48:22,345 - INFO - Processing image: data\raw\00003_00000_00000.jpg
+2025-04-28 16:48:23,081 - INFO - No signs detected in data\raw\00003_00000_00000.jpg
+2025-04-28 16:48:23,089 - INFO - Processing image: data\raw\00003_00000_00001.jpg
+2025-04-28 16:48:23,840 - INFO - No signs detected in data\raw\00003_00000_00001.jpg
+2025-04-28 16:48:23,853 - INFO - Processing image: data\raw\00003_00000_00002.jpg
+2025-04-28 16:48:24,538 - INFO - No signs detected in data\raw\00003_00000_00002.jpg
+2025-04-28 16:48:24,540 - INFO - Processing image: data\raw\00003_00000_00003.jpg
+2025-04-28 16:48:25,253 - INFO - No signs detected in data\raw\00003_00000_00003.jpg
+2025-04-28 16:48:25,268 - INFO - Processing image: data\raw\00003_00000_00004.jpg
+2025-04-28 16:48:25,938 - INFO - No signs detected in data\raw\00003_00000_00004.jpg
+2025-04-28 16:48:25,958 - INFO - Processing image: data\raw\00003_00000_00005.jpg
+2025-04-28 16:48:26,662 - INFO - No signs detected in data\raw\00003_00000_00005.jpg
+2025-04-28 16:48:26,687 - INFO - Processing image: data\raw\00003_00000_00006.jpg
+2025-04-28 16:48:27,540 - INFO - No signs detected in data\raw\00003_00000_00006.jpg
+2025-04-28 16:48:27,576 - INFO - Processing image: data\raw\00003_00000_00007.jpg
+2025-04-28 16:48:28,417 - INFO - No signs detected in data\raw\00003_00000_00007.jpg
+2025-04-28 16:48:28,449 - INFO - Processing image: data\raw\00003_00000_00008.jpg
+2025-04-28 16:48:29,606 - INFO - No signs detected in data\raw\00003_00000_00008.jpg
+2025-04-28 16:48:29,631 - INFO - Processing image: data\raw\00003_00000_00009.jpg
+2025-04-28 16:48:30,329 - INFO - No signs detected in data\raw\00003_00000_00009.jpg
+2025-04-28 16:48:30,350 - INFO - Processing image: data\raw\00003_00000_00010.jpg
+2025-04-28 16:48:31,237 - INFO - No signs detected in data\raw\00003_00000_00010.jpg
+2025-04-28 16:48:31,251 - INFO - Processing image: data\raw\00003_00000_00011.jpg
+2025-04-28 16:48:32,112 - INFO - No signs detected in data\raw\00003_00000_00011.jpg
+2025-04-28 16:48:32,120 - INFO - Processing image: data\raw\00004_00000_00000.jpg
+2025-04-28 16:48:32,828 - INFO - No signs detected in data\raw\00004_00000_00000.jpg
+2025-04-28 16:48:32,851 - INFO - Processing image: data\raw\00004_00000_00001.jpg
+2025-04-28 16:48:33,516 - INFO - No signs detected in data\raw\00004_00000_00001.jpg
+2025-04-28 16:48:33,540 - INFO - Processing image: data\raw\00004_00000_00002.jpg
+2025-04-28 16:48:34,282 - INFO - No signs detected in data\raw\00004_00000_00002.jpg
+2025-04-28 16:48:34,305 - INFO - Processing image: data\raw\00004_00000_00003.jpg
+2025-04-28 16:48:35,203 - INFO - No signs detected in data\raw\00004_00000_00003.jpg
+2025-04-28 16:48:35,220 - INFO - Processing image: data\raw\00004_00000_00004.jpg
+2025-04-28 16:48:36,103 - INFO - No signs detected in data\raw\00004_00000_00004.jpg
+2025-04-28 16:48:36,127 - INFO - Processing image: data\raw\00004_00000_00005.jpg
+2025-04-28 16:48:37,375 - INFO - No signs detected in data\raw\00004_00000_00005.jpg
+2025-04-28 16:48:37,394 - INFO - Processing image: data\raw\00004_00000_00006.jpg
+2025-04-28 16:48:39,036 - INFO - No signs detected in data\raw\00004_00000_00006.jpg
+2025-04-28 16:48:39,057 - INFO - Processing image: data\raw\00004_00000_00007.jpg
+2025-04-28 16:48:40,198 - INFO - No signs detected in data\raw\00004_00000_00007.jpg
+2025-04-28 16:48:40,214 - INFO - Processing image: data\raw\00004_00000_00008.jpg
+2025-04-28 16:48:41,272 - INFO - No signs detected in data\raw\00004_00000_00008.jpg
+2025-04-28 16:48:41,288 - INFO - Processing image: data\raw\00004_00000_00009.jpg
+2025-04-28 16:48:42,280 - INFO - No signs detected in data\raw\00004_00000_00009.jpg
+2025-04-28 16:48:42,297 - INFO - Processing image: data\raw\00004_00000_00010.jpg
+2025-04-28 16:48:43,749 - INFO - No signs detected in data\raw\00004_00000_00010.jpg
+2025-04-28 16:48:43,773 - INFO - Processing image: data\raw\00004_00000_00011.jpg
+2025-04-28 16:48:45,587 - INFO - No signs detected in data\raw\00004_00000_00011.jpg
+2025-04-28 16:48:45,603 - INFO - Processing image: data\raw\00004_00000_00012.jpg
+2025-04-28 16:48:46,696 - INFO - No signs detected in data\raw\00004_00000_00012.jpg
+2025-04-28 16:48:46,715 - INFO - Processing image: data\raw\00005_00000_00000.jpg
+2025-04-28 16:48:49,114 - INFO - No signs detected in data\raw\00005_00000_00000.jpg
+2025-04-28 16:48:49,132 - INFO - Processing image: data\raw\00005_00000_00001.jpg
+2025-04-28 16:48:52,542 - INFO - No signs detected in data\raw\00005_00000_00001.jpg
+2025-04-28 16:48:52,568 - INFO - Processing image: data\raw\00005_00000_00002.jpg
+2025-04-28 16:48:57,044 - INFO - No signs detected in data\raw\00005_00000_00002.jpg
+2025-04-28 16:48:57,059 - INFO - Processing image: data\raw\00005_00000_00003.jpg
+2025-04-28 16:48:58,495 - INFO - No signs detected in data\raw\00005_00000_00003.jpg
+2025-04-28 16:48:58,517 - INFO - Processing image: data\raw\00005_00000_00004.jpg
+2025-04-28 16:48:59,634 - INFO - No signs detected in data\raw\00005_00000_00004.jpg
+2025-04-28 16:48:59,645 - INFO - Processing image: data\raw\00005_00000_00005.jpg
+2025-04-28 16:49:00,811 - INFO - No signs detected in data\raw\00005_00000_00005.jpg
+2025-04-28 16:49:00,830 - INFO - Processing image: data\raw\00005_00000_00006.jpg
+2025-04-28 16:49:01,469 - INFO - No signs detected in data\raw\00005_00000_00006.jpg
+2025-04-28 16:49:01,486 - INFO - Processing image: data\raw\00005_00000_00007.jpg
+2025-04-28 16:49:02,118 - INFO - No signs detected in data\raw\00005_00000_00007.jpg
+2025-04-28 16:49:02,134 - INFO - Processing image: data\raw\00005_00000_00008.jpg
+2025-04-28 16:49:02,886 - INFO - No signs detected in data\raw\00005_00000_00008.jpg
+2025-04-28 16:49:02,899 - INFO - Processing image: data\raw\00005_00000_00009.jpg
+2025-04-28 16:49:03,605 - INFO - No signs detected in data\raw\00005_00000_00009.jpg
+2025-04-28 16:49:03,619 - INFO - Processing image: data\raw\00005_00000_00010.jpg
+2025-04-28 16:49:04,350 - INFO - No signs detected in data\raw\00005_00000_00010.jpg
+2025-04-28 16:49:04,365 - INFO - Processing image: data\raw\00005_00000_00011.jpg
+2025-04-28 16:49:05,118 - INFO - No signs detected in data\raw\00005_00000_00011.jpg
+2025-04-28 16:49:05,136 - INFO - Processing image: data\raw\00006_00000_00000.jpg
+2025-04-28 16:49:06,130 - INFO - No signs detected in data\raw\00006_00000_00000.jpg
+2025-04-28 16:49:06,153 - INFO - Processing image: data\raw\00006_00000_00001.jpg
+2025-04-28 16:49:07,001 - INFO - No signs detected in data\raw\00006_00000_00001.jpg
+2025-04-28 16:49:07,025 - INFO - Processing image: data\raw\00006_00000_00002.jpg
+2025-04-28 16:49:07,888 - INFO - No signs detected in data\raw\00006_00000_00002.jpg
+2025-04-28 16:49:07,907 - INFO - Processing image: data\raw\00006_00000_00003.jpg
+2025-04-28 16:49:08,740 - INFO - No signs detected in data\raw\00006_00000_00003.jpg
+2025-04-28 16:49:08,755 - INFO - Processing image: data\raw\00006_00000_00004.jpg
+2025-04-28 16:49:09,531 - INFO - No signs detected in data\raw\00006_00000_00004.jpg
+2025-04-28 16:49:09,543 - INFO - Processing image: data\raw\00006_00000_00005.jpg
+2025-04-28 16:49:10,649 - INFO - No signs detected in data\raw\00006_00000_00005.jpg
+2025-04-28 16:49:10,667 - INFO - Processing image: data\raw\00006_00000_00006.jpg
+2025-04-28 16:49:11,400 - INFO - No signs detected in data\raw\00006_00000_00006.jpg
+2025-04-28 16:49:11,415 - INFO - Processing image: data\raw\00006_00000_00007.jpg
+2025-04-28 16:49:12,174 - INFO - No signs detected in data\raw\00006_00000_00007.jpg
+2025-04-28 16:49:12,191 - INFO - Processing image: data\raw\00006_00000_00008.jpg
+2025-04-28 16:49:12,914 - INFO - No signs detected in data\raw\00006_00000_00008.jpg
+2025-04-28 16:49:12,937 - INFO - Processing image: data\raw\00006_00000_00009.jpg
+2025-04-28 16:49:13,721 - INFO - No signs detected in data\raw\00006_00000_00009.jpg
+2025-04-28 16:49:13,737 - INFO - Processing image: data\raw\00006_00000_00010.jpg
+2025-04-28 16:49:14,701 - INFO - No signs detected in data\raw\00006_00000_00010.jpg
+2025-04-28 16:49:14,734 - INFO - Processing image: data\raw\00006_00000_00011.jpg
+2025-04-28 16:49:15,592 - INFO - No signs detected in data\raw\00006_00000_00011.jpg
+2025-04-28 16:49:15,608 - INFO - Processing image: data\raw\00006_00000_00012.jpg
+2025-04-28 16:49:16,481 - INFO - No signs detected in data\raw\00006_00000_00012.jpg
+2025-04-28 16:49:16,502 - INFO - Processing image: data\raw\00007_00000_00000.jpg
+2025-04-28 16:49:17,430 - INFO - No signs detected in data\raw\00007_00000_00000.jpg
+2025-04-28 16:49:17,454 - INFO - Processing image: data\raw\00007_00000_00001.jpg
+2025-04-28 16:49:18,583 - INFO - No signs detected in data\raw\00007_00000_00001.jpg
+2025-04-28 16:49:18,605 - INFO - Processing image: data\raw\00007_00000_00002.jpg
+2025-04-28 16:49:19,284 - INFO - No signs detected in data\raw\00007_00000_00002.jpg
+2025-04-28 16:49:19,311 - INFO - Processing image: data\raw\00007_00000_00003.jpg
+2025-04-28 16:49:20,063 - INFO - No signs detected in data\raw\00007_00000_00003.jpg
+2025-04-28 16:49:20,169 - INFO - Processing image: data\raw\00007_00000_00004.jpg
+2025-04-28 16:49:20,933 - INFO - No signs detected in data\raw\00007_00000_00004.jpg
+2025-04-28 16:49:20,956 - INFO - Processing image: data\raw\00007_00000_00005.jpg
+2025-04-28 16:49:21,756 - INFO - No signs detected in data\raw\00007_00000_00005.jpg
+2025-04-28 16:49:21,783 - INFO - Processing image: data\raw\00007_00000_00006.jpg
+2025-04-28 16:49:24,383 - INFO - No signs detected in data\raw\00007_00000_00006.jpg
+2025-04-28 16:49:24,405 - INFO - Processing image: data\raw\00007_00000_00007.jpg
+2025-04-28 16:49:26,273 - INFO - No signs detected in data\raw\00007_00000_00007.jpg
+2025-04-28 16:49:26,288 - INFO - Processing image: data\raw\00007_00000_00008.jpg
+2025-04-28 16:49:28,010 - INFO - No signs detected in data\raw\00007_00000_00008.jpg
+2025-04-28 16:49:28,025 - INFO - Processing image: data\raw\00007_00000_00009.jpg
+2025-04-28 16:49:29,695 - INFO - No signs detected in data\raw\00007_00000_00009.jpg
+2025-04-28 16:49:29,711 - INFO - Processing image: data\raw\00007_00000_00010.jpg
+2025-04-28 16:49:30,876 - INFO - No signs detected in data\raw\00007_00000_00010.jpg
+2025-04-28 16:49:30,907 - INFO - Processing image: data\raw\00007_00000_00011.jpg
+2025-04-28 16:49:32,664 - INFO - No signs detected in data\raw\00007_00000_00011.jpg
+2025-04-28 16:49:32,689 - INFO - Processing image: data\raw\00007_00000_00012.jpg
+2025-04-28 16:49:33,355 - INFO - No signs detected in data\raw\00007_00000_00012.jpg
+2025-04-28 16:49:33,375 - INFO - Processing image: data\raw\00007_00000_00013.jpg
+2025-04-28 16:49:34,061 - INFO - No signs detected in data\raw\00007_00000_00013.jpg
+2025-04-28 16:49:34,095 - INFO - Processing image: data\raw\00007_00000_00014.jpg
+2025-04-28 16:49:34,850 - INFO - No signs detected in data\raw\00007_00000_00014.jpg
+2025-04-28 16:49:34,866 - INFO - Processing image: data\raw\00008_00000_00000.jpg
+2025-04-28 16:49:35,668 - INFO - No signs detected in data\raw\00008_00000_00000.jpg
+2025-04-28 16:49:35,699 - INFO - Processing image: data\raw\00008_00000_00001.jpg
+2025-04-28 16:49:36,569 - INFO - No signs detected in data\raw\00008_00000_00001.jpg
+2025-04-28 16:49:36,610 - INFO - Processing image: data\raw\00008_00000_00002.jpg
+2025-04-28 16:49:37,417 - INFO - No signs detected in data\raw\00008_00000_00002.jpg
+2025-04-28 16:49:37,443 - INFO - Processing image: data\raw\00008_00000_00003.jpg
+2025-04-28 16:49:38,254 - INFO - No signs detected in data\raw\00008_00000_00003.jpg
+2025-04-28 16:49:38,278 - INFO - Processing image: data\raw\00008_00000_00004.jpg
+2025-04-28 16:49:39,102 - INFO - No signs detected in data\raw\00008_00000_00004.jpg
+2025-04-28 16:49:39,113 - INFO - Processing image: data\raw\00008_00000_00005.jpg
+2025-04-28 16:49:39,892 - INFO - No signs detected in data\raw\00008_00000_00005.jpg
+2025-04-28 16:49:39,909 - INFO - Processing image: data\raw\00008_00000_00006.jpg
+2025-04-28 16:49:40,697 - INFO - No signs detected in data\raw\00008_00000_00006.jpg
+2025-04-28 16:49:40,722 - INFO - Processing image: data\raw\00008_00000_00007.jpg
+2025-04-28 16:49:41,710 - INFO - No signs detected in data\raw\00008_00000_00007.jpg
+2025-04-28 16:49:41,734 - INFO - Processing image: data\raw\00008_00000_00008.jpg
+2025-04-28 16:49:42,533 - INFO - No signs detected in data\raw\00008_00000_00008.jpg
+2025-04-28 16:49:42,550 - INFO - Processing image: data\raw\00008_00000_00009.jpg
+2025-04-28 16:49:43,416 - INFO - No signs detected in data\raw\00008_00000_00009.jpg
+2025-04-28 16:49:43,441 - INFO - Processing image: data\raw\00008_00000_00010.jpg
+2025-04-28 16:49:44,358 - INFO - No signs detected in data\raw\00008_00000_00010.jpg
+2025-04-28 16:49:44,377 - INFO - Processing image: data\raw\00009_00000_00000.jpg
+2025-04-28 16:49:45,668 - INFO - No signs detected in data\raw\00009_00000_00000.jpg
+2025-04-28 16:49:45,685 - INFO - Processing image: data\raw\00009_00000_00001.jpg
+2025-04-28 16:49:46,659 - INFO - No signs detected in data\raw\00009_00000_00001.jpg
+2025-04-28 16:49:46,681 - INFO - Processing image: data\raw\00009_00000_00002.jpg
+2025-04-28 16:49:47,757 - INFO - No signs detected in data\raw\00009_00000_00002.jpg
+2025-04-28 16:49:47,775 - INFO - Processing image: data\raw\00009_00000_00003.jpg
+2025-04-28 16:49:48,744 - INFO - No signs detected in data\raw\00009_00000_00003.jpg
+2025-04-28 16:49:48,762 - INFO - Processing image: data\raw\00009_00000_00004.jpg
+2025-04-28 16:49:49,706 - INFO - No signs detected in data\raw\00009_00000_00004.jpg
+2025-04-28 16:49:49,725 - INFO - Processing image: data\raw\00009_00000_00005.jpg
+2025-04-28 16:49:50,495 - INFO - No signs detected in data\raw\00009_00000_00005.jpg
+2025-04-28 16:49:50,525 - INFO - Processing image: data\raw\00009_00000_00006.jpg
+2025-04-28 16:49:51,314 - INFO - No signs detected in data\raw\00009_00000_00006.jpg
+2025-04-28 16:49:51,339 - INFO - Processing image: data\raw\00009_00000_00007.jpg
+2025-04-28 16:49:52,116 - INFO - No signs detected in data\raw\00009_00000_00007.jpg
+2025-04-28 16:49:52,143 - INFO - Processing image: data\raw\00009_00000_00008.jpg
+2025-04-28 16:49:52,971 - INFO - No signs detected in data\raw\00009_00000_00008.jpg
+2025-04-28 16:49:52,983 - INFO - Processing image: data\raw\00009_00000_00009.jpg
+2025-04-28 16:49:53,811 - INFO - No signs detected in data\raw\00009_00000_00009.jpg
+2025-04-28 16:49:53,837 - INFO - Processing image: data\raw\00009_00000_00010.jpg
+2025-04-28 16:49:54,663 - INFO - No signs detected in data\raw\00009_00000_00010.jpg
+2025-04-28 16:49:54,691 - INFO - Processing image: data\raw\00009_00000_00011.jpg
+2025-04-28 16:49:55,488 - INFO - No signs detected in data\raw\00009_00000_00011.jpg
+2025-04-28 16:49:55,498 - INFO - Processing image: data\raw\00010_00000_00000.jpg
+2025-04-28 16:49:56,153 - INFO - No signs detected in data\raw\00010_00000_00000.jpg
+2025-04-28 16:49:56,175 - INFO - Processing image: data\raw\00010_00000_00001.jpg
+2025-04-28 16:49:56,854 - INFO - No signs detected in data\raw\00010_00000_00001.jpg
+2025-04-28 16:49:56,878 - INFO - Processing image: data\raw\00010_00000_00002.jpg
+2025-04-28 16:49:57,621 - INFO - No signs detected in data\raw\00010_00000_00002.jpg
+2025-04-28 16:49:57,638 - INFO - Processing image: data\raw\00010_00000_00003.jpg
+2025-04-28 16:49:58,617 - INFO - No signs detected in data\raw\00010_00000_00003.jpg
+2025-04-28 16:49:58,622 - INFO - Processing image: data\raw\00010_00000_00004.jpg
+2025-04-28 16:49:59,333 - INFO - No signs detected in data\raw\00010_00000_00004.jpg
+2025-04-28 16:49:59,357 - INFO - Processing image: data\raw\00010_00000_00005.jpg
+2025-04-28 16:50:00,624 - INFO - No signs detected in data\raw\00010_00000_00005.jpg
+2025-04-28 16:50:00,677 - INFO - Processing image: data\raw\00010_00000_00006.jpg
+2025-04-28 16:50:01,414 - INFO - No signs detected in data\raw\00010_00000_00006.jpg
+2025-04-28 16:50:01,430 - INFO - Processing image: data\raw\00010_00000_00007.jpg
+2025-04-28 16:50:02,061 - INFO - No signs detected in data\raw\00010_00000_00007.jpg
+2025-04-28 16:50:02,087 - INFO - Processing image: data\raw\00010_00000_00008.jpg
+2025-04-28 16:50:02,772 - INFO - No signs detected in data\raw\00010_00000_00008.jpg
+2025-04-28 16:50:02,803 - INFO - Processing image: data\raw\00010_00000_00009.jpg
+2025-04-28 16:50:03,505 - INFO - No signs detected in data\raw\00010_00000_00009.jpg
+2025-04-28 16:50:03,527 - INFO - Processing image: data\raw\00010_00000_00010.jpg
+2025-04-28 16:50:04,213 - INFO - No signs detected in data\raw\00010_00000_00010.jpg
+2025-04-28 16:50:04,236 - INFO - Processing image: data\raw\00010_00000_00011.jpg
+2025-04-28 16:50:05,263 - INFO - No signs detected in data\raw\00010_00000_00011.jpg
+2025-04-28 16:50:05,286 - INFO - Processing image: data\raw\00011_00000_00000.jpg
+2025-04-28 16:50:05,997 - INFO - No signs detected in data\raw\00011_00000_00000.jpg
+2025-04-28 16:50:06,017 - INFO - Processing image: data\raw\00011_00000_00001.jpg
+2025-04-28 16:50:06,650 - INFO - No signs detected in data\raw\00011_00000_00001.jpg
+2025-04-28 16:50:06,670 - INFO - Processing image: data\raw\00011_00000_00002.jpg
+2025-04-28 16:50:07,344 - INFO - No signs detected in data\raw\00011_00000_00002.jpg
+2025-04-28 16:50:07,369 - INFO - Processing image: data\raw\00011_00000_00003.jpg
+2025-04-28 16:50:08,082 - INFO - No signs detected in data\raw\00011_00000_00003.jpg
+2025-04-28 16:50:08,098 - INFO - Processing image: data\raw\00011_00000_00004.jpg
+2025-04-28 16:50:08,827 - INFO - No signs detected in data\raw\00011_00000_00004.jpg
+2025-04-28 16:50:08,847 - INFO - Processing image: data\raw\00011_00000_00005.jpg
+2025-04-28 16:50:09,510 - INFO - No signs detected in data\raw\00011_00000_00005.jpg
+2025-04-28 16:50:09,533 - INFO - Processing image: data\raw\00011_00000_00006.jpg
+2025-04-28 16:50:10,170 - INFO - No signs detected in data\raw\00011_00000_00006.jpg
+2025-04-28 16:50:10,189 - INFO - Processing image: data\raw\00011_00000_00007.jpg
+2025-04-28 16:50:10,934 - INFO - No signs detected in data\raw\00011_00000_00007.jpg
+2025-04-28 16:50:10,950 - INFO - Processing image: data\raw\00011_00000_00008.jpg
+2025-04-28 16:50:11,569 - INFO - No signs detected in data\raw\00011_00000_00008.jpg
+2025-04-28 16:50:11,588 - INFO - Processing image: data\raw\00011_00000_00009.jpg
+2025-04-28 16:50:12,293 - INFO - No signs detected in data\raw\00011_00000_00009.jpg
+2025-04-28 16:50:12,311 - INFO - Processing image: data\raw\00011_00000_00010.jpg
+2025-04-28 16:50:13,498 - INFO - No signs detected in data\raw\00011_00000_00010.jpg
+2025-04-28 16:50:13,506 - INFO - Processing image: data\raw\00012_00000_00000.jpg
+2025-04-28 16:50:14,258 - INFO - No signs detected in data\raw\00012_00000_00000.jpg
+2025-04-28 16:50:14,272 - INFO - Processing image: data\raw\00012_00000_00001.jpg
+2025-04-28 16:50:14,938 - INFO - No signs detected in data\raw\00012_00000_00001.jpg
+2025-04-28 16:50:14,949 - INFO - Processing image: data\raw\00012_00000_00002.jpg
+2025-04-28 16:50:15,588 - INFO - No signs detected in data\raw\00012_00000_00002.jpg
+2025-04-28 16:50:15,605 - INFO - Processing image: data\raw\00012_00000_00003.jpg
+2025-04-28 16:50:16,222 - INFO - No signs detected in data\raw\00012_00000_00003.jpg
+2025-04-28 16:50:16,230 - INFO - Processing image: data\raw\00012_00000_00004.jpg
+2025-04-28 16:50:16,880 - INFO - No signs detected in data\raw\00012_00000_00004.jpg
+2025-04-28 16:50:16,897 - INFO - Processing image: data\raw\00012_00000_00005.jpg
+2025-04-28 16:50:17,647 - INFO - No signs detected in data\raw\00012_00000_00005.jpg
+2025-04-28 16:50:17,663 - INFO - Processing image: data\raw\00012_00000_00006.jpg
+2025-04-28 16:50:18,275 - INFO - No signs detected in data\raw\00012_00000_00006.jpg
+2025-04-28 16:50:18,295 - INFO - Processing image: data\raw\00012_00000_00007.jpg
+2025-04-28 16:50:18,917 - INFO - No signs detected in data\raw\00012_00000_00007.jpg
+2025-04-28 16:50:18,927 - INFO - Processing image: data\raw\00012_00000_00008.jpg
+2025-04-28 16:50:19,706 - INFO - No signs detected in data\raw\00012_00000_00008.jpg
+2025-04-28 16:50:19,722 - INFO - Processing image: data\raw\00012_00000_00009.jpg
+2025-04-28 16:50:20,490 - INFO - No signs detected in data\raw\00012_00000_00009.jpg
+2025-04-28 16:50:20,521 - INFO - Processing image: data\raw\00012_00000_00010.jpg
+2025-04-28 16:50:21,280 - INFO - No signs detected in data\raw\00012_00000_00010.jpg
+2025-04-28 16:50:21,296 - INFO - Processing image: data\raw\00012_00000_00011.jpg
+2025-04-28 16:50:21,975 - INFO - No signs detected in data\raw\00012_00000_00011.jpg
+2025-04-28 16:50:22,008 - INFO - Processing image: data\raw\00013_00000_00000.jpg
+2025-04-28 16:50:22,714 - INFO - No signs detected in data\raw\00013_00000_00000.jpg
+2025-04-28 16:50:22,730 - INFO - Processing image: data\raw\00013_00000_00001.jpg
+2025-04-28 16:50:23,461 - INFO - No signs detected in data\raw\00013_00000_00001.jpg
+2025-04-28 16:50:23,487 - INFO - Processing image: data\raw\00013_00000_00002.jpg
+2025-04-28 16:50:24,211 - INFO - No signs detected in data\raw\00013_00000_00002.jpg
+2025-04-28 16:50:24,244 - INFO - Processing image: data\raw\00013_00000_00003.jpg
+2025-04-28 16:50:24,979 - INFO - No signs detected in data\raw\00013_00000_00003.jpg
+2025-04-28 16:50:24,994 - INFO - Processing image: data\raw\00013_00000_00004.jpg
+2025-04-28 16:50:26,276 - INFO - No signs detected in data\raw\00013_00000_00004.jpg
+2025-04-28 16:50:26,284 - INFO - Processing image: data\raw\00013_00000_00005.jpg
+2025-04-28 16:50:27,002 - INFO - No signs detected in data\raw\00013_00000_00005.jpg
+2025-04-28 16:50:27,026 - INFO - Processing image: data\raw\00013_00000_00006.jpg
+2025-04-28 16:50:27,699 - INFO - No signs detected in data\raw\00013_00000_00006.jpg
+2025-04-28 16:50:27,719 - INFO - Processing image: data\raw\00013_00000_00007.jpg
+2025-04-28 16:50:28,497 - INFO - No signs detected in data\raw\00013_00000_00007.jpg
+2025-04-28 16:50:28,514 - INFO - Processing image: data\raw\00013_00000_00008.jpg
+2025-04-28 16:50:29,261 - INFO - No signs detected in data\raw\00013_00000_00008.jpg
+2025-04-28 16:50:29,283 - INFO - Processing image: data\raw\00013_00000_00009.jpg
+2025-04-28 16:50:29,953 - INFO - No signs detected in data\raw\00013_00000_00009.jpg
+2025-04-28 16:50:29,975 - INFO - Processing image: data\raw\00013_00000_00010.jpg
+2025-04-28 16:50:30,661 - INFO - No signs detected in data\raw\00013_00000_00010.jpg
+2025-04-28 16:50:30,680 - INFO - Processing image: data\raw\00014_00000_00000.jpg
+2025-04-28 16:50:31,538 - INFO - No signs detected in data\raw\00014_00000_00000.jpg
+2025-04-28 16:50:31,543 - INFO - Processing image: data\raw\00014_00000_00001.jpg
+2025-04-28 16:50:32,348 - INFO - No signs detected in data\raw\00014_00000_00001.jpg
+2025-04-28 16:50:32,360 - INFO - Processing image: data\raw\00014_00000_00002.jpg
+2025-04-28 16:50:33,082 - INFO - No signs detected in data\raw\00014_00000_00002.jpg
+2025-04-28 16:50:33,092 - INFO - Processing image: data\raw\00014_00000_00003.jpg
+2025-04-28 16:50:33,810 - INFO - No signs detected in data\raw\00014_00000_00003.jpg
+2025-04-28 16:50:33,826 - INFO - Processing image: data\raw\00014_00000_00004.jpg
+2025-04-28 16:50:34,466 - INFO - No signs detected in data\raw\00014_00000_00004.jpg
+2025-04-28 16:50:34,477 - INFO - Processing image: data\raw\00014_00000_00005.jpg
+2025-04-28 16:50:35,175 - INFO - No signs detected in data\raw\00014_00000_00005.jpg
+2025-04-28 16:50:35,188 - INFO - Processing image: data\raw\00014_00000_00006.jpg
+2025-04-28 16:50:35,848 - INFO - No signs detected in data\raw\00014_00000_00006.jpg
+2025-04-28 16:50:35,864 - INFO - Processing image: data\raw\00014_00000_00007.jpg
+2025-04-28 16:50:36,581 - INFO - No signs detected in data\raw\00014_00000_00007.jpg
+2025-04-28 16:50:36,598 - INFO - Processing image: data\raw\00014_00000_00008.jpg
+2025-04-28 16:50:37,360 - INFO - No signs detected in data\raw\00014_00000_00008.jpg
+2025-04-28 16:50:37,372 - INFO - Processing image: data\raw\00014_00000_00009.jpg
+2025-04-28 16:50:38,181 - INFO - No signs detected in data\raw\00014_00000_00009.jpg
+2025-04-28 16:50:38,194 - INFO - Processing image: data\raw\00014_00000_00010.jpg
+2025-04-28 16:50:39,421 - INFO - No signs detected in data\raw\00014_00000_00010.jpg
+2025-04-28 16:50:39,443 - INFO - Processing image: data\raw\00015_00000_00000.jpg
+2025-04-28 16:50:40,140 - INFO - No signs detected in data\raw\00015_00000_00000.jpg
+2025-04-28 16:50:40,163 - INFO - Processing image: data\raw\00015_00000_00001.jpg
+2025-04-28 16:50:40,813 - INFO - No signs detected in data\raw\00015_00000_00001.jpg
+2025-04-28 16:50:40,829 - INFO - Processing image: data\raw\00015_00000_00002.jpg
+2025-04-28 16:50:41,741 - INFO - No signs detected in data\raw\00015_00000_00002.jpg
+2025-04-28 16:50:41,746 - INFO - Processing image: data\raw\00015_00000_00003.jpg
+2025-04-28 16:50:42,639 - INFO - No signs detected in data\raw\00015_00000_00003.jpg
+2025-04-28 16:50:42,659 - INFO - Processing image: data\raw\00015_00000_00004.jpg
+2025-04-28 16:50:43,521 - INFO - No signs detected in data\raw\00015_00000_00004.jpg
+2025-04-28 16:50:43,545 - INFO - Processing image: data\raw\00015_00000_00005.jpg
+2025-04-28 16:50:44,461 - INFO - No signs detected in data\raw\00015_00000_00005.jpg
+2025-04-28 16:50:44,475 - INFO - Processing image: data\raw\00015_00000_00006.jpg
+2025-04-28 16:50:45,271 - INFO - No signs detected in data\raw\00015_00000_00006.jpg
+2025-04-28 16:50:45,286 - INFO - Processing image: data\raw\00015_00000_00007.jpg
+2025-04-28 16:50:46,648 - INFO - No signs detected in data\raw\00015_00000_00007.jpg
+2025-04-28 16:50:46,850 - INFO - Processing image: data\raw\00015_00000_00008.jpg
+2025-04-28 16:50:53,311 - INFO - No signs detected in data\raw\00015_00000_00008.jpg
+2025-04-28 16:50:53,336 - INFO - Processing image: data\raw\00015_00000_00009.jpg
+2025-04-28 16:50:56,541 - INFO - No signs detected in data\raw\00015_00000_00009.jpg
+2025-04-28 16:50:56,647 - INFO - Processing image: data\raw\00015_00000_00010.jpg
+2025-04-28 16:50:59,900 - INFO - No signs detected in data\raw\00015_00000_00010.jpg
+2025-04-28 16:50:59,916 - INFO - Processing image: data\raw\00015_00000_00011.jpg
+2025-04-28 16:51:02,380 - INFO - No signs detected in data\raw\00015_00000_00011.jpg
+2025-04-28 16:51:02,417 - INFO - Processing image: data\raw\00016_00000_00000.jpg
+2025-04-28 16:51:06,270 - INFO - No signs detected in data\raw\00016_00000_00000.jpg
+2025-04-28 16:51:06,286 - INFO - Processing image: data\raw\00016_00000_00001.jpg
+2025-04-28 16:51:09,881 - INFO - No signs detected in data\raw\00016_00000_00001.jpg
+2025-04-28 16:51:09,891 - INFO - Processing image: data\raw\00016_00000_00002.jpg
+2025-04-28 16:51:10,974 - INFO - No signs detected in data\raw\00016_00000_00002.jpg
+2025-04-28 16:51:11,006 - INFO - Processing image: data\raw\00016_00000_00003.jpg
+2025-04-28 16:51:12,599 - INFO - No signs detected in data\raw\00016_00000_00003.jpg
+2025-04-28 16:51:12,609 - INFO - Processing image: data\raw\00016_00000_00004.jpg
+2025-04-28 16:51:13,925 - INFO - No signs detected in data\raw\00016_00000_00004.jpg
+2025-04-28 16:51:13,948 - INFO - Processing image: data\raw\00016_00000_00005.jpg
+2025-04-28 16:51:14,591 - INFO - No signs detected in data\raw\00016_00000_00005.jpg
+2025-04-28 16:51:14,622 - INFO - Processing image: data\raw\00016_00000_00006.jpg
+2025-04-28 16:51:15,279 - INFO - No signs detected in data\raw\00016_00000_00006.jpg
+2025-04-28 16:51:15,315 - INFO - Processing image: data\raw\00016_00000_00007.jpg
+2025-04-28 16:51:16,103 - INFO - No signs detected in data\raw\00016_00000_00007.jpg
+2025-04-28 16:51:16,139 - INFO - Processing image: data\raw\00016_00000_00008.jpg
+2025-04-28 16:51:16,958 - INFO - No signs detected in data\raw\00016_00000_00008.jpg
+2025-04-28 16:51:16,994 - INFO - Processing image: data\raw\00016_00000_00009.jpg
+2025-04-28 16:51:17,840 - INFO - No signs detected in data\raw\00016_00000_00009.jpg
+2025-04-28 16:51:17,862 - INFO - Processing image: data\raw\00016_00000_00010.jpg
+2025-04-28 16:51:18,987 - INFO - No signs detected in data\raw\00016_00000_00010.jpg
+2025-04-28 16:51:19,002 - INFO - Processing image: data\raw\test_sign1.jpg
+2025-04-28 16:51:19,855 - ERROR - Sign classification failed: Unable to synchronously open file (file signature not found)
+2025-04-28 16:51:19,855 - ERROR - Sign processing failed: Sign classification error
+2025-04-28 16:51:19,855 - ERROR - Sign classification failed: Unable to synchronously open file (file signature not found)
+2025-04-28 16:51:19,855 - ERROR - Sign processing failed: Sign classification error
+2025-04-28 16:51:19,855 - ERROR - Sign classification failed: Unable to synchronously open file (file signature not found)
+2025-04-28 16:51:19,855 - ERROR - Sign processing failed: Sign classification error
+2025-04-28 16:51:19,867 - ERROR - Sign classification failed: Unable to synchronously open file (file signature not found)
+2025-04-28 16:51:19,867 - ERROR - Sign processing failed: Sign classification error
+2025-04-28 16:51:19,867 - ERROR - Sign classification failed: Unable to synchronously open file (file signature not found)
+2025-04-28 16:51:19,867 - ERROR - Sign processing failed: Sign classification error
+2025-04-28 16:51:19,867 - INFO - Processing complete. Success: 203/203
+2025-04-28 16:51:19,872 - INFO - Pipeline execution completed
+2025-04-28 16:53:39,290 - INFO - Configuration validated successfully
+2025-04-28 16:53:39,290 - INFO - Starting processing of 203 images
+2025-04-28 16:53:39,290 - CRITICAL - Unexpected error: name 'ThreadPoolExecutor' is not defined
+Traceback (most recent call last):
+  File "E:\Traffic_Sign\main.py", line 548, in main
+    with ThreadPoolExecutor(max_workers=4) as executor:
+         ^^^^^^^^^^^^^^^^^^
+NameError: name 'ThreadPoolExecutor' is not defined
+2025-04-28 16:53:39,290 - INFO - Pipeline execution completed
